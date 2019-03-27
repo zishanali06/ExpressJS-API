@@ -18,22 +18,22 @@ let getChirps = () => {
         chirparray.pop();
         console.log(chirparray);
         chirparray.forEach((chirp, index) => {
-                console.log(chirp);
-                let user = chirp.username;
-                let chirpstring = chirp.chirp;
-                let p = $(`<p><b>${user}</b>: ${chirpstring} <button type="button" id="delbutton${chirp.id}" class="close" aria-label="Close">
+            console.log(chirp);
+            let user = chirp.username;
+            let chirpstring = chirp.chirp;
+            let p = $(`<p><b>${user}</b>: ${chirpstring} <button type="button" id="delbutton${chirp.id}" class="close" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button></p>`);
-                $('#chirpcontainer').append(p);
+            $('#chirpcontainer').append(p);
 
-
-                $(`#delbutton${chirp.id}`).click(() => {
-                    console.log('in delbutton click');
-                    $.ajax({
-                        type: "DELETE",
-                        url: (`api/chirps/${chirp.id}`)
-                    })
+            //Add Delete button
+            $(`#delbutton${chirp.id}`).click(() => {
+                console.log('in delbutton click');
+                $.ajax({
+                    type: "DELETE",
+                    url: (`api/chirps/${chirp.id}`)
                 })
-            
+            })
+
         })
     })
 };
