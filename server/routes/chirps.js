@@ -11,6 +11,7 @@ chirpRouter.get("/:id?", (req, res) =>{
     }
 });
 
+//creating a chirp
 chirpRouter.post("/", (req, res) => {
     chirpStore.CreateChirp(req.body);
     res.sendStatus(200);
