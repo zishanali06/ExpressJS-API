@@ -13,7 +13,6 @@ chirpRouter.get("/:id?", (req, res) =>{
 
 //creating a chirp
 chirpRouter.post("/", (req, res) => {
-    console.log(req.body);
     chirpStore.CreateChirp(req.body);
     res.sendStatus(200);
 });
