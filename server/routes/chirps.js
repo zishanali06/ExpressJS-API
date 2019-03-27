@@ -18,8 +18,6 @@ chirpRouter.post("/", (req, res) => {
 });
 
 chirpRouter.put("/:id", (req, res) => {
-    console.log(req.params.id);
-    console.log(req.body);
     chirpStore.UpdateChirp(req.params.id, req.body);
     res.sendStatus(200);
 });
