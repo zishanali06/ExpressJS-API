@@ -70,7 +70,6 @@ let getChirps = () => {
                         username: $(`#usernamemodal${chirp.id}`).val(),
                         chirp: $(`#chirpmodal${chirp.id}`).val()
                     };
-                    console.log(newchirp);
                     $.ajax({
                         type: "PUT",
                         url: (`api/chirps/${chirp.id}`),
