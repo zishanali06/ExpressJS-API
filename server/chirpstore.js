@@ -25,6 +25,7 @@ let updateChirp = (id, chirp) => {
 }
 
 let deleteChirp = id => {
+    console.log(id);
     delete chirps[id];
     writeChirps();
 }

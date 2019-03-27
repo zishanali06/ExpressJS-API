@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,15 +11,25 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="container">
-        <div class="row text-center"><h1 class="col-12">ExpressJS API Chirp</h1></div>
-        <div class="row">
-            <input class="form-control" type="text" placeholder="Default input">
-            <input class="form-control" type="text" placeholder="Default input">
+        <div class="row text-center">
+            <h1 class="col-12">ExpressJS API Chirp</h1>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-6 d-flex flex-column justify-content-center">
+                <input class="form-control" id="username" type="text" placeholder="Username">
+                <input class="form-control" id="chirp" type="text" placeholder="Chirp">
+                <button class="btn btn-primary rounded">Add Chirp</button>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-6" id="chirpcontainer"></div>
         </div>
     </div>
     <!-- my script tag -->
     <script src="app.js"></script>
 </body>
+
 </html>

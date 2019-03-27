@@ -13,6 +13,7 @@ chirpRouter.get("/:id?", (req, res) =>{
 
 //creating a chirp
 chirpRouter.post("/", (req, res) => {
+    console.log(req.body);
     chirpStore.CreateChirp(req.body);
     res.sendStatus(200);
 });
@@ -20,7 +21,7 @@ chirpRouter.post("/", (req, res) => {
 chirpRouter.put("/:id", (req, res) => {
     console.log(req.params.id);
     console.log(req.body);
-    chirpStore.UpdateChirp(req.params.id, {"testing":"Yes","testing1":"54546"});
+    chirpStore.UpdateChirp(req.params.id, req.body);
     res.sendStatus(200);
 });
 
@@ -28,7 +29,5 @@ chirpRouter.delete("/:id", (req, res) => {
     chirpStore.DeleteChirp(req.params.id);
     res.sendStatus(200);
 });
-
-
 
 module.exports = chirpRouter;
