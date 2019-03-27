@@ -17,7 +17,6 @@ let getChirps = () => {
 
         //go thru array and make chirps for each with click events
         chirparray.forEach((chirp, index) => {
-            console.log(chirp);
             let user = chirp.username;
             let chirpstring = chirp.chirp;
             let p = $(`<p><span class"chirpclick" id="clickablechirp${chirp.id}"><b>${user}</b>: ${chirpstring}</span> <button type="button" id="delbutton${chirp.id}" class="close" aria-label="Close">
@@ -26,7 +25,6 @@ let getChirps = () => {
 
             //Add Delete button
             $(`#delbutton${chirp.id}`).click(() => {
-                console.log('in delbutton click');
                 $.ajax({
                     type: "DELETE",
                     url: (`api/chirps/${chirp.id}`)
