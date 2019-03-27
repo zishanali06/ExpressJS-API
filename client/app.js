@@ -31,7 +31,8 @@ let getChirps = () => {
                 $.ajax({
                     type: "DELETE",
                     url: (`api/chirps/${chirp.id}`)
-                })
+                }).then(() => getChirps());
+                
             })
 
         })
@@ -39,8 +40,6 @@ let getChirps = () => {
 };
 
 $('button').click(() => {
-    console.log($('#username').val());
-    console.log($('#chirp').val());
     let user = $('#username').val();
     let chirp = $('#chirp').val();
     let newchirpobj = {
@@ -48,6 +47,9 @@ $('button').click(() => {
         chirp
     };
     let ojbtojson = JSON.stringify(newchirpobj);
-    $.post('http://localhost:3000/api/chirps/', newchirpobj);
-    getChirps();
+    $.post('http://localhost:3000/api/chirps/', newchirpobj)
+    .then(() => {
+        getChirps();
+        $('#username').val("");
+    });
 })
