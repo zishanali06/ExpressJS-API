@@ -98,4 +98,4 @@ $('#addchirpbutton').click(() => {
             $('#username').val("");
             $('#chirp').val("");
         });
-})
+});
